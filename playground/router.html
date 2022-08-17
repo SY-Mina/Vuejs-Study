@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+         <!-- 페이지 url이 변경됐을때 그 url에 따라 변경되는 영역: router viewport
+         router-view 태그는 Vue에 router 인스턴스를 연결해야지만 사용가능함 -->
+         <!-- Vue 선언할때 router을 입력 안하면 에러 뜬다.  -->
+        <router-view></router-view>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router@3.5.3/dist/vue-router.js"></script>
+
+    <script>
+        var LoginComponent = {
+            template: '<div>login</div>'
+        }
+        var MainComponent = {
+            template: '<div>main</div>'
+        }
+        var router = new VueRouter({
+            // 페이지의 라우팅 정보 (어떤 url로 이동했을때 어떤 페이지가 뿌려질지) - 배열 (페이지 개수에 따라 각 객체가 필요함)
+            routes: [
+                // 로그인 페이지
+                {
+                    // 페이지의 url
+                    path: '/login',
+                    // 해당 url에서 표시될 컴포넌트
+                    component: LoginComponent
+                },
+                // 메인 페이지
+                {
+                    path: '/main',
+                    component: MainComponent
+                }
+            ]
+        });
+
+        new Vue({
+            el: '#app',
+            router: router
+        });
+    </script>
+
+</body>
+</html>
+
+<!-- 실행 후 url에 /login, /main 이런식으로 넣으면 해당 router 화면으로 이동 -->
+<!-- login url로 이동하면 해당 컴포넌트를 router-view 태그에서 보여준다.  -->
