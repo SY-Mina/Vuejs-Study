@@ -13,6 +13,6 @@
 
 **라우터 링크**
 - 라우팅된 경로로 이동하게끔 앵커 태그 생성
-<router-link to="/main">main</router-link>
-<!-- convert -->
-<a href="#/main" class="">main</a>
+<!-- <router-link to="/main">main</router-link>
+// 
+<a href="#/main" class="">main</a> -->
