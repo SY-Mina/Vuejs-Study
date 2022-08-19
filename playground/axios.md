@@ -13,7 +13,7 @@
 - Promise 기반(JavaScript의 비동기 처리 패턴)
 
 
-JavaScript의 비동기 처리 패턴
+## JavaScript의 비동기 처리 패턴
 비동기: 특정 로직의 실행이 끝날 때까지 기다리지 않고 나머지 코드를 계속해서 실행함.
 * callback: 특정 로직이 끝나면 다른 동작 실행
 ``` JavaScript
